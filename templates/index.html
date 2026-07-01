@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zero&rarr;Hired Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="blueprint-bg" aria-hidden="true"></div>
+
+<div class="app-shell">
+
+  <!-- ===== HEADER: BADGE ===== -->
+  <header class="topbar">
+    <div class="lanyard" aria-hidden="true"></div>
+
+    <div class="badge" id="badge" data-mode="tutor">
+      <div class="badge-punch" aria-hidden="true"></div>
+      <div class="badge-photo">
+        <svg viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true">
+          <circle cx="32" cy="24" r="12" fill="currentColor" opacity="0.85"/>
+          <path d="M10 56c2-14 12-20 22-20s20 6 22 20" fill="currentColor" opacity="0.85"/>
+        </svg>
+      </div>
+      <div class="badge-info">
+        <span class="badge-eyebrow">ZERO&rarr;HIRED COACH</span>
+        <span class="badge-role" id="badgeRole">TUTOR MODE</span>
+        <span class="badge-id" id="badgeId">ID&nbsp;NO.&nbsp;001-T</span>
+      </div>
+      <div class="badge-barcode" aria-hidden="true"></div>
+    </div>
+
+    <div class="mode-toggle" role="group" aria-label="Switch coaching mode">
+      <button class="mode-btn active" id="btnTutor" data-mode="tutor">
+        <span class="mode-btn-icon">&#9670;</span> Tutor
+      </button>
+      <button class="mode-btn" id="btnInterviewer" data-mode="interviewer">
+        <span class="mode-btn-icon">&#9670;</span> Interviewer
+      </button>
+    </div>
+  </header>
+
+  
+  <main class="chat-wrap">
+    <div class="chat-scale" aria-hidden="true">
+      <span>NOTES</span><span>&mdash;</span><span>0</span><span>&mdash;</span><span>1</span><span>&mdash;</span><span>2</span><span>&mdash;</span><span>3</span><span>&mdash;</span><span>4</span>
+    </div>
+
+    <div class="thread" id="thread">
+      <div class="sys-line">
+        <span class="sys-tag">SESSION START</span>
+        <span class="sys-text" id="sysModeText">Tutor mode engaged &mdash; ask anything, I'll meet you where you are.</span>
+      </div>
+    </div>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input
+        type="text"
+        id="messageInput"
+        placeholder="Type a question for your tutor&hellip;"
+        aria-label="Message"
+      />
+      <button type="submit" id="sendBtn">
+        <span>SEND</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+  </main>
+
+  <footer class="footnote">
+    <span>DRAFT&nbsp;01 &middot; ZERO&rarr;HIRED COACH &middot; powered by your own learning history</span>
+  </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
