@@ -23,8 +23,8 @@ async def fetch_memory(query: str) -> str:
 
 
     if not search_results:
-       return "No relevant past context found."
-    context_string = "\n" .join([str(result) for result in search_results])
+        return "No relevant past context found."
+    context_string = "\n".join(map(str, search_results))
     return context_string
 
 
