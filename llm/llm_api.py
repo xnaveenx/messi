@@ -17,6 +17,9 @@ try:
 except ImportError:
     logger.warning("google-genai SDK is not installed. LLM calls will fail until installed.")
     SDK_AVAILABLE = False
+    genai = None
+    types = None
+    APIError = Exception
 
 
 class TutorResponse(BaseModel):
